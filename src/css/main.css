@@ -1,7 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: normal 16px sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #555;
+}
+
 body {
   background: #f9fafb;
-  font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  margin: 0;
-  padding: 30px;
+  font-family: 'Lato', sans-serif;
+}
+
+header {
+  color: white;
+  text-align: center;
+  min-height: 300px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url('https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=2428&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D');
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+}
+
+#search {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#search form {
+  min-width: 450px;
+}
+
+#search form input {
+  color: #fff;
+  margin-top: 10px;
+  padding: 7px;
+  background-color: rgba(255,255,255,.3);
+  height: 45px;
+  width: 350px;
+  border: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  font-size: 17px;
+}
+
+#search form input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:rgba(255,255,255,.9);
+}
+
+#search form input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+ color:rgba(255,255,255,.9);
+ opacity:  1;
+}
+
+#search form input::-moz-placeholder { /* Mozilla Firefox 19+ */
+ color:rgba(255,255,255,.9);
+ opacity:  1;
+}
+
+#search form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color:rgba(255,255,255,.9);
+}
+
+#search form input::-ms-input-placeholder { /* Microsoft Edge */
+ color:rgba(255,255,255,.9);
+}
+
+#search form button {
+  height: 45px;
+  width: 90px;
+  padding: 3px;
+  border: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  position: relative;
+  color: white;
+  font-size: 15px;
+  text-transform: uppercase;
+  background-color:#466437;
+  cursor: pointer;
+}
+
+#search form button:hover {
+  opacity: .9;
+  transition: .1s ease;
 }
