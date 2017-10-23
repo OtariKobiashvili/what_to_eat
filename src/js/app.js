@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 // import components
 import Header from './components/header_components/Header';
-
+import MoreInfo from './components/info_components/More_Info';
 // Import CSS
 import '../css/main.css';
 
@@ -12,6 +12,9 @@ class App extends Component {
     return (
       <div>
         <Header />
+        <div className="container">
+          <MoreInfo />
+        </div>
       </div>
     )
   }
