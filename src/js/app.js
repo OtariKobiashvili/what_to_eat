@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import '../css/main.css'; // Import CSS
+// import components
+import Header from './components/header_components/Header';
 
-export default class App extends Component {
+// Import CSS
+import '../css/main.css';
+
+class App extends Component {
   render() {
     return (
       <div>
-        <h1>What to Eat?</h1>
+        <Header />
       </div>
     )
   }
