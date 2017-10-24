@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-import '../css/main.css'; // Import CSS
+// import components
+import Header from './components/header_components/Header';
+import MoreInfo from './components/info_components/More_Info';
+// Import CSS
+import '../css/main.css';
 
-export default class App extends Component {
+class App extends Component {
   render() {
     return (
       <div>
-        <h1>What to Eat?</h1>
+        <Header />
+        <div className="container">
+          <MoreInfo />
+        </div>
       </div>
     )
   }
