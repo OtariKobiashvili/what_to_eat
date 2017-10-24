@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 // import components
 import Header from './components/header_components/Header';
 import MoreInfo from './components/info_components/More_Info';
+import RecipeDetail from './components/recipe_components/Recipe_Details';
 // Import CSS
 import '../css/main.css';
 
@@ -21,7 +22,7 @@ class App extends Component {
   }
 
   random() {
-    return (Math.floor(Math.random()*10)+1);
+    return (Math.floor(Math.random()*10));
   }
 
   searchRecipes(ingredients){
@@ -33,8 +34,8 @@ class App extends Component {
       console.log(data.hits[this.random()].recipe);
       this.setState({
         recipe: data.hits[this.random()].recipe,
-      })
-    })
+      });
+    });
   }
 
 
@@ -44,6 +45,7 @@ class App extends Component {
         <Header />
         <div className="container">
           <MoreInfo />
+          <RecipeDetail recipe={this.state.recipe} />
         </div>
       </div>
     )
