@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 // import components
 import Header from './components/header_components/Header';
 import MoreInfo from './components/info_components/More_Info';
-import RecipeDetail from './components/recipe_components/Recipe_Details';
+import Recipes from './components/recipe_components/Recipes';
 // Import CSS
 import '../css/main.css';
 
@@ -15,10 +15,10 @@ class App extends Component {
   constructor(props) {
     super(props);
       this.state = {
-        recipe: null
+        recipes: null
       }
 
-      this.searchRecipes("random");
+      this.searchRecipes();
   }
 
   random() {
@@ -31,9 +31,9 @@ class App extends Component {
 
     fetch(URL).then((resp) => resp.json())
     .then((data) => {
-      console.log(data.hits[this.random()].recipe);
+      let recipe = data.hits[this.random()].recipe;
       this.setState({
-        recipe: data.hits[this.random()].recipe,
+        recipes: recipe,
       });
     });
   }
@@ -45,7 +45,7 @@ class App extends Component {
         <Header />
         <div className="container">
           <MoreInfo />
-          <RecipeDetail recipe={this.state.recipe} />
+          <Recipes recipes={this.state.recipes} />
         </div>
       </div>
     )

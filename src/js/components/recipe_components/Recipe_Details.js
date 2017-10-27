@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
 
-import Loader from '../info_components/Loader';
+const RecipeDetail = ({recipes}) => {
 
-const RecipeDetail = ({recipe}) => {
-  if(!recipe){
-    return (
-      < Loader />
-    );
-  }
-
+  console.log(recipes);
   return (
-    <div className="recipe">
-      <img src={recipe.image} alt="Picture of recipe"/>
+    <div>
+      <h2>Todays Suggestions</h2>
+      <div className="recipe">
+      <img src={recipes.image} alt="Picture of recipe"/>
+      <h2>{recipes.label}</h2>
+      <h5>By: {recipes.source}</h5>
+      <p>Servings: {recipes.yield}</p>
+      <p>Calories per Serving: {Math.floor(recipes.calories/recipes.yield)}</p>
+      <p>Fat per Serving: {Math.floor(recipes.totalNutrients.FAT.quantity/recipes.yield)}</p>
+      <p>Carbs per Serving: {Math.floor(recipes.totalNutrients.CHOCDF.quantity/recipes.yield)}</p>
+      <p>Protein per Serving: {Math.floor(recipes.totalNutrients.PROCNT.quantity/recipes.yield)}</p>
+    </div>
     </div>
   )
 }
