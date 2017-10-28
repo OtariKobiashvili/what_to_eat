@@ -22,12 +22,12 @@ class App extends Component {
   }
 
   random() {
-    return (Math.floor(Math.random()*10));
+    return (Math.floor(Math.random()*50));
   }
 
   searchRecipes(ingredients){
 
-    const URL = `https://api.edamam.com/search?q=${ingredients}`
+    const URL = `https://api.edamam.com/search?q=${ingredients}&from=0&to=50`
 
     fetch(URL).then((resp) => resp.json())
     .then((data) => {

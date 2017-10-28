@@ -7,14 +7,23 @@ const Recipes = ({recipes}) => {
   if(!recipes){
     return (
       <div>
-        <h2>Todays Suggestions</h2>
+        <div className="recipe-header">
+          <h2>Our Suggestions</h2>
+          <p>Dont like what you see? No worries, search for what you want to cook with.</p>
+        </div>
         < Loader />
       </div>
     );
   }
 
   return (
-    <Recipe_Detail recipes={recipes} />
+    <div>
+      <div className="recipe-header">
+        <h2>Our Suggestions</h2>
+        <p>Dont like what you see? No worries, search for what you want to cook with.</p>
+      </div>
+      <Recipe_Detail recipes={recipes} />
+    </div>
   )
 }
 

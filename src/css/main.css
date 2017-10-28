@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  padding: 0 15px;
+  padding: 0 25px;
 }
 
 /* //////////////////////HEADER/////////////////// */
@@ -28,21 +28,18 @@ header {
   background-position: center center;
   background-size: cover;
   position: relative;
+  padding-top: 80px !important;
 }
 
-#search {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.search {
   width: 100%;
 }
 
-#search form {
+.search form {
   width: 100%;
 }
 
-#search form input {
+.search form input {
   color: #fff;
   margin-top: 10px;
   padding: 7px;
@@ -56,29 +53,29 @@ header {
   font-size: 17px;
 }
 
-#search form input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+.search form input::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color:rgba(255,255,255,.9);
 }
 
-#search form input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+.search form input:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
  color:rgba(255,255,255,.9);
  opacity:  1;
 }
 
-#search form input::-moz-placeholder { /* Mozilla Firefox 19+ */
+.search form input::-moz-placeholder { /* Mozilla Firefox 19+ */
  color:rgba(255,255,255,.9);
  opacity:  1;
 }
 
-#search form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+.search form input:-ms-input-placeholder { /* Internet Explorer 10-11 */
  color:rgba(255,255,255,.9);
 }
 
-#search form input::-ms-input-placeholder { /* Microsoft Edge */
+.search form input::-ms-input-placeholder { /* Microsoft Edge */
  color:rgba(255,255,255,.9);
 }
 
-#search form button {
+.search form button {
   height: 45px;
   width: 90px;
   padding: 3px;
@@ -93,11 +90,19 @@ header {
   cursor: pointer;
 }
 
-#search form button:hover {
+.search form button:hover {
   opacity: .9;
   transition: .1s ease;
 }
 
+@media screen and (max-width:549px) {
+  .search form input {
+    border-radius: 3px;
+  }
+  .search form button {
+    margin-top: 15px;
+  }
+}
 /* //////////////////////////MORE INFO//////////////////////////////// */
 
 .more-info {
@@ -126,13 +131,13 @@ header {
 /* /////////////////////////////LOADER///// */
 
 div.loader {
-  border: 8px solid rgba(0,0,0,.1);
+  border: 6px solid rgba(0,0,0,.1);
   border-right-color:#466437;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin: 10px auto;
-  animation: spinLoader linear 3s infinite;
+  animation: spinLoader linear 1s infinite;
 }
 
 @keyframes spinLoader {
@@ -144,6 +149,51 @@ div.loader {
   }
 }
 
-@media screen and (max-width: 530px) {
+/* /////////////////////////////Wrapper///// */
 
+.recipe-header {
+  margin-bottom: 20px;
+  margin-top: -35px;
+  text-align: center;
+}
+
+.recipe-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.3;
+}
+
+.recipe {
+  position: relative;
+  padding: 30px;
+  display: inline-block;
+  border-radius: 2px;
+  color: #fff;
+  background-position: center center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+}
+
+.recipe:hover {
+  background-size: 125%;
+}
+
+.recipe-detail {
+  position: relative;
+  min-width: 350px;
+  max-width: 350px;
+  height: 200px;
+  z-index: 1;
+}
+
+@media screen and (max-width: 530px) {
+  .recipe-detail {
+    min-width: 250px;
+  }
 }
