@@ -6,7 +6,7 @@ class Header extends Component {
   render() {
     return (
       <header className='hero container'>
-        <div id='search'>
+        <div className='search'>
           <h2>Whats for Dinner?</h2>
           < Searchbar />
         </div>

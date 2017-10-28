@@ -15,6 +15,7 @@ const RecipeDetail = ({recipes}) => {
           <p>Fat per Serving: {Math.floor(recipes.totalNutrients.FAT.quantity/recipes.yield)}</p>
           <p>Carbs per Serving: {Math.floor(recipes.totalNutrients.CHOCDF.quantity/recipes.yield)}</p>
           <p>Protein per Serving: {Math.floor(recipes.totalNutrients.PROCNT.quantity/recipes.yield)}</p>
+          <a href={recipes.url} target="_blank">Recipe</a>
         </div>
       </div>
     </div>
