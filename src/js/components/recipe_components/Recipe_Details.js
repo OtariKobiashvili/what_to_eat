@@ -4,8 +4,7 @@ const RecipeDetail = ({recipes}) => {
 
   console.log(recipes);
   return (
-    <div className="wrapper">
-      <div className="recipe" style={{backgroundImage: `url(${recipes.image})`}}>
+      <li className="recipe" style={{backgroundImage: `url(${recipes.image})`}}>
         <div className="recipe-overlay"></div>
         <div className="recipe-detail">
           <h2>{recipes.label}</h2>
@@ -17,8 +16,7 @@ const RecipeDetail = ({recipes}) => {
           <p>Protein per Serving: {Math.floor(recipes.totalNutrients.PROCNT.quantity/recipes.yield)}</p>
           <a href={recipes.url} target="_blank">Recipe</a>
         </div>
-      </div>
-    </div>
+      </li>
   )
 }
 
