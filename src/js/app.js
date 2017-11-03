@@ -22,18 +22,23 @@ class App extends Component {
   }
 
   random() {
-    return (Math.floor(Math.random()*50));
+    return (Math.floor(Math.random()*100));
   }
 
   searchRecipes(ingredients){
 
-    const URL = `https://api.edamam.com/search?q=${ingredients}&from=0&to=50`
+    const URL = `https://api.edamam.com/search?q=${ingredients}&from=0&to=100`
 
     fetch(URL).then((resp) => resp.json())
     .then((data) => {
-      let recipe = data.hits[this.random()].recipe;
+      let random = this.random();
+      let recipes = [];
+
+      for(let i = 0; i < 6; i++) {
+        recipes.push(data.hits[random + i].recipe);
+      }
       this.setState({
-        recipes: recipe,
+        recipes: recipes,
       });
     });
   }
