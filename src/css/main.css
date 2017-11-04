@@ -165,13 +165,14 @@ div.loader {
   margin-top: 15px;
   border-top: solid 2px #466437;
   border-style: solid;
-  width: 200px;
+  width: 175.5px;
 }
 
 .wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .recipe-overlay {
