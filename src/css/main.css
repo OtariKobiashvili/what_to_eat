@@ -92,7 +92,7 @@ header {
 
 .search form button:hover {
   opacity: .9;
-  transition: .1s ease;
+  transition: .2s ease;
 }
 
 @media screen and (max-width:549px) {
@@ -101,6 +101,7 @@ header {
   }
   .search form button {
     margin-top: 15px;
+    width: 180px;
   }
 }
 /* //////////////////////////MORE INFO//////////////////////////////// */
@@ -149,12 +150,29 @@ div.loader {
   }
 }
 
-/* /////////////////////////////Wrapper///// */
+/* /////////////////////////////Recipes///// */
+
+
 
 .recipe-header {
   margin-bottom: 20px;
   margin-top: -35px;
   text-align: center;
+}
+
+.recipe-header hr {
+  margin: 0 auto;
+  margin-top: 15px;
+  border-top: solid 2px #466437;
+  border-style: solid;
+  width: 175.5px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
 .recipe-overlay {
@@ -164,7 +182,7 @@ div.loader {
   bottom: 0;
   left: 0;
   background-color: black;
-  opacity: 0.3;
+  opacity: 0.4;
 }
 
 .recipe {
@@ -177,6 +195,17 @@ div.loader {
   background-repeat: no-repeat;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: all 0.4s cubic-bezier(.25,.8,.25,1);
+  opacity: 0;
+  animation: slide .8s .3s forwards cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.recipe:nth-child(even) {
+  transform: translateX(50px);
+}
+
+.recipe:nth-child(odd) {
+  transform: translateX(-50px);
+
 }
 
 .recipe:hover {
@@ -190,21 +219,38 @@ div.loader {
   min-height: 200px;
   z-index: 1;
   color: #fff;
+  font-size: 85%;
+  opacity: 0;
+  transform: translateY(100px);
+  animation: slide .5s 1.2s forwards;
 }
 
-.recipe-detail a {
-  display: inline-block;
+.recipe a {
   color: #fff;
   font-weight: bold;
   text-decoration: none;
-  padding: 3px;
-  margin-top: 4px;
-  border: 1px solid white;
-  border-radius: 2px;
+}
+
+@keyframes slide {
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@media screen and (max-width: 869px) {
+  .wrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .recipe {
+    flex-grow: 1;
+  }
 }
 
 @media screen and (max-width: 530px) {
   .recipe-detail {
-    min-width: 250px;
+    max-width: 290px;
+    min-width: 290px;
   }
 }
