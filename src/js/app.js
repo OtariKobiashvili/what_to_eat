@@ -29,16 +29,17 @@ class App extends Component {
     }
 
     let random = () => {
-      return (Math.floor(Math.random()*93));
+      return (Math.floor(Math.random()*88));
     };
 
     const URL = `https://api.edamam.com/search?q=${ingredients}&from=0&to=100`
 
-    fetch(URL).then((resp) => resp.json())
+    fetch(URL)
+    .then((resp) => resp.json())
     .then((data) => {
       let recipes = [];
 
-      for(let i = 0; i < 6; i++) {
+      for(let i = 0; i < 12; i+=2) {
         recipes.push(data.hits[random() + i].recipe);
       }
 

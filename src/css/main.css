@@ -242,6 +242,7 @@ div.loader {
   .wrapper {
     max-width: 500px;
     margin: 0 auto;
+    margin-bottom: 20px;
   }
   .recipe {
     flex-grow: 1;

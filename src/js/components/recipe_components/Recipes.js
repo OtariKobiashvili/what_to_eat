@@ -8,8 +8,7 @@ const Recipes = ({recipes}) => {
     return (
       <section>
         <div className="recipe-header">
-          <h2>Our Suggestions</h2>
-          <p>Dont like what you see? No worries, search for what you want to cook with.</p>
+          <h2>Loading some suggestions...</h2>
           <hr/>
         </div>
         < Loader />
@@ -30,7 +29,6 @@ const Recipes = ({recipes}) => {
     <section>
       <div className="recipe-header">
         <h2>Our Suggestions</h2>
-        <p>Dont like what you see? No worries, search for what you want to cook with.</p>
         <hr/>
       </div>
       <ul className="wrapper">
