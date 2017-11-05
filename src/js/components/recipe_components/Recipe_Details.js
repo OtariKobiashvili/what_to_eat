@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 
 const RecipeDetail = ({recipes}) => {
-
-  console.log(recipes);
   return (
       <li className="recipe" style={{backgroundImage: `url(${recipes.image})`}}>
         <a href={recipes.url} target="_blank">
