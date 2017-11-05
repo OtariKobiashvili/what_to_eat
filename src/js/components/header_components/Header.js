@@ -8,7 +8,7 @@ class Header extends Component {
       <header className='hero container'>
         <div className='search'>
           <h2>Whats for Dinner?</h2>
-          < Searchbar />
+          < Searchbar onSearchSubmit={this.props.newSearch}/>
         </div>
       </header>
     )
