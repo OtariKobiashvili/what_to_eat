@@ -6,14 +6,14 @@ import Recipe_Detail from './Recipe_Details'
 const Recipes = ({recipes}) => {
   if(!recipes){
     return (
-      <div>
+      <section>
         <div className="recipe-header">
           <h2>Our Suggestions</h2>
           <p>Dont like what you see? No worries, search for what you want to cook with.</p>
           <hr/>
         </div>
         < Loader />
-      </div>
+      </section>
     );
   }
 
@@ -27,7 +27,7 @@ const Recipes = ({recipes}) => {
   });
 
   return (
-    <div>
+    <section>
       <div className="recipe-header">
         <h2>Our Suggestions</h2>
         <p>Dont like what you see? No worries, search for what you want to cook with.</p>
@@ -36,7 +36,7 @@ const Recipes = ({recipes}) => {
       <ul className="wrapper">
         {recipeDetails}
       </ul>
-    </div>
+    </section>
   )
 }
 
