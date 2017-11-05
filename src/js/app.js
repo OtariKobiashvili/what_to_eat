@@ -22,10 +22,14 @@ class App extends Component {
   }
 
   searchRecipes(ingredients){
-    console.log("hello world");
+    if(this.state.recipes) {
+      this.setState({
+        recipes: null
+      });
+    }
 
     let random = () => {
-      return (Math.floor(Math.random()*100));
+      return (Math.floor(Math.random()*93));
     };
 
     const URL = `https://api.edamam.com/search?q=${ingredients}&from=0&to=100`
@@ -37,7 +41,7 @@ class App extends Component {
       for(let i = 0; i < 6; i++) {
         recipes.push(data.hits[random() + i].recipe);
       }
-      console.log(recipes);
+
       this.setState({
         recipes: recipes,
       });
@@ -46,11 +50,11 @@ class App extends Component {
 
 
   render() {
-
+    const newSearch = (ingredients) => {this.searchRecipes(ingredients)};
 
     return (
       <div>
-        <Header newSearch={this.searchRecipes}/>
+        <Header newSearch={newSearch}/>
         <div className="container">
           <MoreInfo />
           <Recipes recipes={this.state.recipes} />
