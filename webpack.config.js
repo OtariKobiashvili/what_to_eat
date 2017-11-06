@@ -1,20 +1,20 @@
-// We are using node's native package 'path'
+// using node's native package 'path'
 // https://nodejs.org/api/path.html
 const path = require('path');
 
-const HtmlWebpackPlugin = require('html-webpack-plugin'); // Import our plugin -> ADDED IN THIS STEP
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // Import our plugin
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 // Constant with our paths
 const paths = {
   DIST: path.resolve(__dirname, 'dist'),
-  SRC: path.resolve(__dirname, 'src'),
-  JS: path.resolve(__dirname, 'src/js'),
+  SRC: path.resolve(__dirname, 'public'),
+  JS: path.resolve(__dirname, 'src'),
 };
 
 // Webpack configuration
 module.exports = {
-  entry: path.join(paths.JS, 'app.js'),
+  entry: path.join(paths.JS, 'index.js'),
   output: {
     path: paths.DIST,
     filename: 'app.bundle.js',
