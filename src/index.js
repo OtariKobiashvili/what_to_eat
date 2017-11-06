@@ -6,7 +6,7 @@ import Header from './components/header_components/Header';
 import MoreInfo from './components/info_components/More_Info';
 import Recipes from './components/recipe_components/Recipes';
 // Import CSS
-import '../css/main.css';
+import './main.css';
 
 const APP_ID = '95c6c70e';
 const APP_KEY = '6251e7d2e5ce82faf8f6a409b9e125e0';
